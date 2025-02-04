@@ -1,0 +1,41 @@
+//3.Create a function that takes an array of integers and returns a pair containing count of odd and the  even values in the array.
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int even_count(vector<int> &arr){
+    int count = 0;
+    for(auto it: arr){
+        if(it % 2 == 0){
+            count = count + 1;
+        }
+    }
+    return count;
+}
+int odd_count(vector<int> &arr){
+    int count = 0;
+    for(auto it: arr){
+        if(it % 2 != 0){
+            count = count + 1;
+        }
+    }
+    return count;
+}
+
+pair<int , int> odd_even(vector<int> &arr){
+    int odd , even;
+    odd = odd_count(arr);
+    even = even_count(arr);
+    return {odd ,even};
+}
+
+int main(){
+    
+    vector<int> arr = {1,2,3,4,5,56,67,78,98,70};
+    pair<int , int> pair1 = odd_even(arr);
+    
+    cout<<pair1.first<<"  "<<pair1.second;
+    
+}

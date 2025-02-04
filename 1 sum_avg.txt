@@ -1,0 +1,37 @@
+//1.Create a function that takes an array of integers and returns a pair (tuple) containing the sum  and  average of the elements in the array.
+
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int sum_arr(vector<int> &arr){
+    int sum = 0;
+    for(auto it : arr)
+        sum = sum + it;
+    return sum;
+}
+float average_arr(vector<int> &arr){
+     float average;
+     int n = arr.size();
+     average = sum_arr(arr)/n;
+     return average;
+}
+
+
+pair<int , float> sum_avg(vector<int> &arr){
+    int sum;
+    float average;
+    sum = sum_arr(arr);
+    average = average_arr(arr);
+    return {sum , average};
+    
+}
+int main(){
+    
+    vector<int> arr = {1,2,3,4,5,56,67,78,98,70};
+    pair<int , float> pair1 = sum_avg(arr);
+    cout<<pair1.first<<" "<<pair1.second;
+    
+}
+----------------------------------
+output 384 38
